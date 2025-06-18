@@ -17,4 +17,8 @@ export class LapService {
         return this.http.get<Lap[]>(`${this.url}/laps/all`, { withCredentials: false })
     }
 
+    createLap(lap: Lap) {
+        return this.http.post<Lap>(`${this.url}/lap/create`, lap, { withCredentials: false })
+    }
+
 }

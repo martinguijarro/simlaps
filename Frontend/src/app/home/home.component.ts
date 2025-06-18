@@ -33,4 +33,25 @@ export class HomeComponent {
     })
   }
 
+  createLap() {
+    const newLap: Lap = new Lap(
+      crypto.randomUUID(),
+      new Date(),
+      '01:45.321',
+      '1',
+      '1',
+      '1',
+      '1'
+    );
+    
+    this.lapService.createLap(newLap).subscribe({
+      next: res => {
+        console.log(res);
+      },
+      error: err => {
+        console.error('Error:', err);
+      }
+    })
+  }
+
 }
