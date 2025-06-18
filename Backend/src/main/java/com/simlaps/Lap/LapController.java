@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 
-
-
-
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class LapController {
@@ -27,7 +24,7 @@ public class LapController {
 
     // GET endpoints
 
-    @GetMapping("laps/all")
+    @GetMapping("/laps/all")
     public List<Lap> getAllLaps() {
         return lapService.getAllLaps();
     }
@@ -37,7 +34,6 @@ public class LapController {
         return lapService.getLapsByUserId(userId);
     }
     
-
     // CREATE or UPDATE endpoints
     
     @PostMapping("/lap/create")
