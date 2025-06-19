@@ -1,8 +1,23 @@
 <div class="contenido">
-    <p>Vueltas:</p>
-    @for (lap of laps; track lap) {
-        <div>{{ lap.time }}</div>
-    }
+  <p>Vueltas:</p>
+
+  <div class="lap-header">
+    <div>Tiempo</div>
+    <div class="coche">Coche</div>
+    <div>Circuito</div>
+    <div>Juego</div>
+  </div>
+
+  @for (lap of laps; track lap) {
+    <div class="lap-item">
+      <div>{{ lap.time }}</div>
+      <div class="coche">{{ getCarName(lap.carId) }}</div>
+      <div>{{ getCircuitName(lap.circuitId) }}</div>
+      <div>{{ getGameName(lap.gameId) }}</div>
+    </div>
+  }
 </div>
 
-<button (click)="createLap()">Crear vuelta</button>
+<button mat-fab class="new-lap-btn" (click)="openLapForm()">
+  <mat-icon>add</mat-icon>
+</button>

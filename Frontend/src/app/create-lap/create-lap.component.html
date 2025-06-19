@@ -1,0 +1,44 @@
+<div mat-dialog-container class="container">
+    <div mat-dialog-title>
+        <h1>Nueva vuelta</h1>
+    </div>
+
+    <div mat-dialog-content>
+        <form [formGroup]="lapForm" (ngSubmit)="createLap()">
+            <mat-form-field>
+                <mat-label>Tiempo</mat-label>
+                <input matInput type="text" formControlName="time">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Circuito</mat-label>
+                <mat-select class="circuit-selector" formControlName="circuitId">
+                    @for (circuit of circuits; track circuit) {
+                        <mat-option [value]="circuit.circuitId">{{ circuit.name }}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Coche</mat-label>
+                <mat-select class="car-selector" formControlName="carId">
+                    @for (car of cars; track car) {
+                        <mat-option [value]="car.carId">{{ car.brand }}  {{ car.model }}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Juego</mat-label>
+                <mat-select class="game-selector" formControlName="gameId">
+                    @for (game of games; track game) {
+                        <mat-option [value]="game.gameId">{{ game.name }}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+            
+            <button mat-raised-button color="primary" type="submit">Añadir</button>
+        </form>
+    </div>
+
+</div>

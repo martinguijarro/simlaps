@@ -1,0 +1,83 @@
+/* Contenedor principal */
+.contenido {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+/* Título */
+.contenido p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+/* Cada vuelta como fila */
+.lap-header, .lap-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 16px;
+}
+
+.lap-header {
+  font-weight: bold;
+  color: #bbb;
+  border-bottom: 2px solid #444;
+  margin-bottom: 8px;
+}
+
+.lap-item {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  font-size: 0.95rem;
+  color: #ddd;
+  padding: 12px 16px;
+}
+
+.lap-item > div,
+.lap-header > div {
+  flex: 1;
+}
+
+.lap-item > div.coche,
+.lap-header > div.coche {
+  flex: 2;
+}
+
+.new-lap-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: #6200ea; /* Morado estándar Material */
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-lap-btn:hover {
+  background-color: #3700b3; /* Morado más oscuro al hover */
+}
+
+.new-lap-btn:active {
+  background-color: #30009c; /* Más oscuro al hacer click */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  transform: scale(0.95);
+}
